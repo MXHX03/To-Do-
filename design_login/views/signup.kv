@@ -1,0 +1,85 @@
+#: import Circle widgets.circle.Circle
+#: import TextLabel widgets.text_label.TextLabel
+#: import TextField widgets.text_field.TextField
+#: import IconBtn widgets.buttons.IconBtn
+#: import TextBtn widgets.buttons.TextBtn
+<SignupScreen>
+    md_bg_color: app.colors.blue
+    Circle:
+        md_bg_color: app.colors.white
+        size: "300dp", "300dp"
+        pos_hint: {"center_x": .9, "center_y": .04}
+        radius: [350]
+
+    Circle:
+        md_bg_color: app.colors.dark
+        size:"450dp", "400dp"
+        pos_hint: {"center_x": .42,"center_y":.95}
+        radius: [380]
+
+    TextLabel:
+        text: "Create\nAccount"
+        pos_hint:{"center_x": .58,"center_y":.79}
+        text_color: app.colors.white
+        font_name: "Roboto-Bold"
+        font_size: app.font_size.heading
+
+    IconBtn:
+        icon: "chevron-left"
+        pos_hint: {"top": .99}
+        icon_size: app.font_size.h1
+        icon_color: app.colors.white
+        icon_size: app.font_size.heading
+        on_press: app.change_screen("login")
+
+
+    TextField:
+        hint_text: "Email"
+        fill_color_normal: app.colors.dark
+        fill_color_focus: app.colors.dark
+        hint_text_color_normal: app.colors.white
+        hint_text_color_focus: app.colors.white
+        text_color_focus: app.colors.white
+        text_color_normal: app.colors.white
+        pos_hint: {"center_x": .5,"center_y":.48}
+
+    TextField:
+        hint_text: "password"
+        fill_color_normal: app.colors.dark
+        fill_color_focus: app.colors.dark
+        hint_text_color_normal: app.colors.white
+        hint_text_color_focus: app.colors.white
+        text_color_focus: app.colors.white
+        text_color_normal: app.colors.white
+        pos_hint: {"center_x": .5,"center_y":.38}
+
+    TextField:
+        hint_text: "username"
+        fill_color_normal: app.colors.dark
+        fill_color_focus: app.colors.dark
+        hint_text_color_normal: app.colors.white
+        hint_text_color_focus: app.colors.white
+        text_color_focus: app.colors.white
+        text_color_normal: app.colors.white
+        pos_hint: {"center_x": .5,"center_y":.58}
+
+    TextLabel:
+        text: "Sign Up"
+        pos_hint:{"center_x": .63,"center_y":.25}
+        text_color: app.colors.dark
+        font_name: "Roboto-Bold"
+        font_size: app.font_size.heading
+
+    IconBtn:
+        icon: "arrow-right"
+        pos_hint: {"center_x": .8,"center_y":.25}
+        icon_size: app.font_size.h1
+        icon_color: app.colors.white
+        md_bg_color: app.colors.dark
+
+
+    TextBtn:
+        text: "[u]Sign in[/u]"
+        pos_hint: {"center_x": .7,"center_y":.08}
+        text_color: app.colors.dark
+        on_press: app.change_screen("login")

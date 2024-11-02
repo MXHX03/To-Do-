@@ -1,0 +1,78 @@
+#: import Text widgets.text_label.TextLabel
+
+<HomeScreen>
+    TextLabel:
+        text: "Conversations"
+        font_name: "Roboto-Bold"
+        font_size: app.font_size.heading
+        pos_hint: {"x": .04, "center_y": .95}
+
+    MDChip:
+        text: "Add new"
+        markup: True
+        icon_left: "plus"
+        pos_hint: {"x": .68, "center_y": .95}
+        icon_size: app.font_size.h1
+        md_bg_color: app.colors.blue
+        text_color: app.colors.white
+        icon_left_color: "black"
+        font_size: app.font_size.h1
+        font_name: "Roboto-Bold"
+        size_hint: .3, .04
+
+    TextField:
+        icon_left: "magnify"
+        hint_text: "search..."
+        pos_hint: {"x": .05, "center_y": .85}
+        size_hint: .9, .067
+        radius: [20]
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {"center_x": .5, "center_y": .3}
+        ScrollView:
+            MDList:
+                spacing: "10dp"
+                ChatItems:
+                    name: "John Doe"
+                    last_msg: "hello there?"
+                    time_sent: "Today"
+                    image: "img/person-1.jpg"
+                ChatItems:
+                    name: "Emma Ryder"
+                    last_msg: "its over!"
+                    time_sent: "3 Oct"
+                    image: "img/person-2.jpg"
+                ChatItems:
+                    name: "Ken Sima"
+                    last_msg: "your welcome!"
+                    time_sent: "6 Oct"
+                    image: "img/photo-1.jpg"
+                ChatItems:
+                    name: "Bella hammers"
+                    last_msg: "the ui is sexy"
+                    time_sent: "5 Oct"
+                    image: "img/photo-2.jpg"
+
+<ChatItems>
+    size_hint: .8, None
+    width: "60dp"
+    text: root.name
+    secondary_text: root.last_msg
+    font_name: "Roboto-Bold"
+
+    MDLabel:
+        text: root.time_sent
+        pos_hint: {"x": .85, "center_y": .5}
+        font_size: app.font_size.h6
+        font_name: "Roboto-Bold"
+    ImageLeftWidget:
+        source:root.image
+        radius: [25]
+
+
+
+
+
+

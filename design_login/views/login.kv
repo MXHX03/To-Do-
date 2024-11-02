@@ -1,0 +1,62 @@
+#: import Circle widgets.circle.Circle
+#: import TextLabel widgets.text_label.TextLabel
+#: import TextField widgets.text_field.TextField
+#: import IconBtn widgets.buttons.IconBtn
+#: import TextBtn widgets.buttons.TextBtn
+<LoginScreen>
+    Circle:
+        md_bg_color: app.colors.blue
+        size: "200dp", "200dp"
+        pos_hint: {"center_x": .99, "center_y": .75}
+
+    Circle:
+        md_bg_color: app.colors.dark
+        size:"450dp", "400dp"
+        pos_hint: {"center_x": .42,"center_y":.92}
+        radius: [380]
+
+    Circle:
+        md_bg_color: app.colors.yellow
+        size:"310dp", "170dp"
+        pos_hint: {"center_x": .1,"center_y":1}
+        radius: [200]
+
+    TextLabel:
+        text: "welcome\nBack"
+        pos_hint:{"center_x": .58,"center_y":.79}
+        text_color: app.colors.white
+        font_name: "Roboto-Bold"
+        font_size: app.font_size.heading
+
+    TextField:
+        hint_text: "Email"
+        pos_hint: {"center_x": .5,"center_y":.5}
+
+    TextField:
+        hint_text: "password"
+        pos_hint: {"center_x": .5,"center_y":.39}
+
+    TextLabel:
+        text: "Sign In"
+        pos_hint:{"center_x": .63,"center_y":.25}
+        text_color: app.colors.dark
+        font_name: "Roboto-Bold"
+        font_size: app.font_size.heading
+
+    IconBtn:
+        icon: "arrow-right"
+        pos_hint: {"center_x": .8,"center_y":.25}
+        icon_size: app.font_size.h1
+        icon_color: app.colors.white
+        md_bg_color: app.colors.dark
+
+    TextBtn:
+        text: "[u]Sign Up[/u]"
+        pos_hint: {"center_x": .2,"center_y":.08}
+        text_color: app.colors.dark
+        on_press: app.change_screen("signup")
+
+    TextBtn:
+        text: "[u]Forgot Password[/u]"
+        pos_hint: {"center_x": .7,"center_y":.08}
+        text_color: app.colors.dark

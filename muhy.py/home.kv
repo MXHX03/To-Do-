@@ -1,0 +1,64 @@
+<HomeScreen>
+    MDFloatLayout:
+
+        MDBottomNavigation:
+            id: nav
+            panel_color:main_color
+            text_color_active: "white"
+            text_color_normal: gch("ffee11")
+
+            MDBottomNavigationItem:
+                name:"screen1"
+                text:"Notes"
+                icon:"notebook"
+
+                MDTopAppBar:
+                    title:"MY NOTES"
+                    md_bg_color: main_color
+                    pos_hint: {"top":1}
+                    anchor_title: "center"
+                    left_action_items: [["logout", lambda x: root.logout()]]
+
+                MDBoxLayout:
+                    pos_hint: {"center_y": .39}
+                    ScrollView:
+                        do_scroll_x: False
+                        do_scroll_y: True
+                        MDList:
+                            id: notes_container
+
+
+            MDBottomNavigationItem:
+                name:"screen2"
+                text:""
+                icon:"blank"
+
+            MDBottomNavigationItem:
+                name:"screen3"
+                text:"Trash"
+                icon:"trash-can"
+
+                MDTopAppBar:
+                    title:"MY NOTES"
+                    md_bg_color: main_color
+                    pos_hint: {"top":1}
+                    anchor_title: "center"
+                    left_action_items: [["logout", lambda x: root.logout()]]
+
+                MDBoxLayout:
+                    pos_hint: {"center_y": .39}
+                    ScrollView:
+                        do_scroll_x: False
+                        do_scroll_y: True
+                        MDList:
+                            id: deleted_notes_container
+
+        MDFloatingActionButton:
+            icon:"plus"
+            pos_hint: {"center_x": .5}
+            y: "24dp"
+            md_bg_color: "white"
+            theme_icon_color:"Custom"
+            icon_color: main_color
+            elevation: 5
+            on_press: root.manager.current = "add_note_screen"

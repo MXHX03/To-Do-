@@ -1,0 +1,57 @@
+
+<NotesList>
+   text: root.text
+   theme_text_color: "Custom"
+   text_color: "black"
+   font_name: "Roboto-Bold"
+   on_press: root.show_notes(root.text)
+   IconLeftWidget:
+      icon:"delete"
+      theme_icon_color: "Custom"
+      icon_color: "red"
+      on_press: app.ask(root.text)
+
+
+
+<DeletedNotesList>
+   text: root.text
+   theme_text_color: "Custom"
+   text_color: "black"
+   font_name: "Roboto-Bold"
+   on_press: root.show_notes(root.text)
+   IconLeftWidget:
+      icon:"delete"
+      theme_icon_color: "Custom"
+      icon_color: "red"
+      on_press: app.remove(root.text)
+
+
+
+<AddNote>
+   MDTextField:
+      id: note_field
+      hint_text: "text..."
+      hint_text_color_normal: "black"
+      hint_text_color_focus: "grey"
+      text_color_normal: "black"
+      text_color_focus: "grey"
+      pos_hint: {"center_x": .5, "center_y": .7}
+      line_color_normal: "black"
+      line_color_focus: "grey"
+      max_height: "200dp"
+      multiline:True
+      size_hint_x: .9
+
+   MDFillRoundFlatButton:
+      text: "save"
+      md_bg_color: main_color
+      pos_hint:{"center_x": .5, "center_y": .2}
+      on_press: root.save(note_field.text)
+      font_size: "18sp"
+      markup: True
+
+   MDIconButton:
+      icon: "chevron-left"
+      icon_size: "25sp"
+      pos_hint: {"top": .99}
+      on_press: root.manager.current = "home_screen"
